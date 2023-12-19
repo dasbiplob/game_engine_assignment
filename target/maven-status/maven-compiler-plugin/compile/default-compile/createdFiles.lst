@@ -1,0 +1,9 @@
+fi/handson/gamengine/service/GameAccountService.class
+fi/handson/gamengine/model/Customer.class
+fi/handson/gamengine/model/GameEvent.class
+fi/handson/gamengine/repository/CustomerRepository.class
+fi/handson/gamengine/controller/GameAccountController.class
+fi/handson/gamengine/repository/GameAccountRepository.class
+fi/handson/gamengine/GameEngineApplication.class
+fi/handson/gamengine/repository/GameEventRepository.class
+fi/handson/gamengine/model/GameAccount.class
