@@ -3,19 +3,24 @@ package fi.handson.gamengine.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.math.BigDecimal;
+import java.io.Serializable;
 import java.util.Date;
-import java.util.UUID;
 @Entity
 @Table(name = "game_events")
 @AllArgsConstructor
 @Data
 @NoArgsConstructor
-public class GameEvent {
-    private Date timestamp;
+public class GameEvent implements Serializable {
+    @Column(name="time_stamp")
+    private Date time_stamp;
     @Id
-    private String playerId;
-    private String eventId;
-    private String eventType;
+    @Column(name="player_id")
+    private String player_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="event_id")
+    private String event_id;
+    @Column(name="event_type")
+    private String event_type;
+    @Column(name="amount")
     private Double amount;
 }

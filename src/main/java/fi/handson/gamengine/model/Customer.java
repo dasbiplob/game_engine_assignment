@@ -5,18 +5,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.math.BigDecimal;
-@Entity(name = "customers")
+import java.io.Serializable;
+@Entity
 @Table(name = "customers")
 @AllArgsConstructor
 @Data
 @NoArgsConstructor
-public class Customer {
+public class Customer implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private String id;
-    private Double accountBalanace;
+    @Column(name="account_balance")
+    private Double accountBalance;
 
 
 

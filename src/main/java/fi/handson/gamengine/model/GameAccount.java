@@ -3,16 +3,20 @@ package fi.handson.gamengine.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.math.BigDecimal;
-import java.util.List;
+import java.io.Serializable;
 
 @Entity
 @Table (name = "game_accounts")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class GameAccount {
+public class GameAccount implements Serializable {
     @Id
-    private String customerId;
-    private String playerId;
+    @Column(name="customer_id")
+    private String customer_id;
+
+    @Column(name="player_id")
+    private String player_id;
+
+
 }
