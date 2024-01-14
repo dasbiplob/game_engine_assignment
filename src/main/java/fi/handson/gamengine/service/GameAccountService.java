@@ -49,8 +49,10 @@ public class GameAccountService {
         if(StringUtils.isNotEmpty(event.getEvent_type())&&(event.getEvent_type()
                 .equalsIgnoreCase("PURCHASE")|| event.getEvent_type().equalsIgnoreCase("WIN")))
             gameEventRepository.save(event);
-        else
+        else{
+            System.out.println("Invalid Event Type: " + event.getEvent_type());
             throw new RuntimeException("Event type is not proper");
+        }
         // Update the account balance based on the event type and amount.
         if(StringUtils.trimToEmpty(event.getEvent_type()).equalsIgnoreCase("PURCHASE") && event.getAmount()<= accountBalance){
             accountBalance= accountBalance-event.getAmount();
@@ -60,8 +62,5 @@ public class GameAccountService {
         }
         // Return the updated account balance.
         return accountBalance;
-
     }
-
-
 }

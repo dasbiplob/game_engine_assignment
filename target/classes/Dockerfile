@@ -2,10 +2,10 @@
 FROM openjdk:17-jdk-alpine
 
 # Set the working directory inside the container
-WORKDIR /app
+WORKDIR /app .
 
 # Copy the JAR file into the container
-COPY target/game_engine-0.0.1-SNAPSHOT.jar /app/game_engine.jar
+COPY target/. /app/.
 
 # Expose the port that the application will run on
 EXPOSE 8080

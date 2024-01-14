@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/accounts")
 public class GameAccountController {
 
+    @Autowired
     private final GameAccountService gameAccountService;
 
     /**
@@ -21,7 +22,7 @@ public class GameAccountController {
      *
      * @param gameAccountService The service responsible for game account operations.
      */
-    @Autowired
+
     public GameAccountController(GameAccountService gameAccountService) {
         this.gameAccountService = gameAccountService;
     }
@@ -33,12 +34,11 @@ public class GameAccountController {
      * @return ResponseEntity containing the remaining balance after processing the event.
      */
 
-    @PostMapping ("/event")
+    @PostMapping("/event")
     public ResponseEntity<Double> triggerEvent(@RequestBody GameEvent event) {
         // Trigger the event and get the remaining balance from the GameAccountService.
         Double remainingBalance = gameAccountService.triggerEvent(event);
         // Respond with the remaining balance in the HTTP response body.
         return ResponseEntity.ok(remainingBalance);
     }
-
 }
