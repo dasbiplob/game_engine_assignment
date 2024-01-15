@@ -1,0 +1,7 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+engine,fi.handson.gamengine.model,GameAccount,124,0,22,0,5,0,21,0,10,0
+engine,fi.handson.gamengine.model,GameEvent,245,29,46,0,5,10,36,4,13,4
+engine,fi.handson.gamengine.model,Customer,121,3,22,0,4,1,20,1,9,1
+engine,fi.handson.gamengine.controller,GameAccountController,8,6,0,0,2,3,1,1,1,1
+engine,fi.handson.gamengine.service,GameAccountService,0,85,2,8,0,16,2,5,0,2
+engine,fi.handson.gamengine,GameEngineApplication,5,3,0,0,2,1,1,1,1,1

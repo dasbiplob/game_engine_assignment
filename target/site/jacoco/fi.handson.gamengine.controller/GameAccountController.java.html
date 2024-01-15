@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>GameAccountController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">engine</a> &gt; <a href="index.source.html" class="el_package">fi.handson.gamengine.controller</a> &gt; <span class="el_source">GameAccountController.java</span></div><h1>GameAccountController.java</h1><pre class="source lang-java linenums">package fi.handson.gamengine.controller;
+
+import fi.handson.gamengine.model.GameEvent;
+import fi.handson.gamengine.service.GameAccountService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+/**
+ * Controller class responsible for handling HTTP requests related to game accounts.
+ * Endpoints in this class are under the &quot;/api/accounts&quot; base path.
+ */
+@RestController
+@RequestMapping(&quot;/api/accounts&quot;)
+public class GameAccountController {
+
+    @Autowired
+    private final GameAccountService gameAccountService;
+
+    /**
+     * Constructor-based dependency injection for GameAccountService.
+     *
+     * @param gameAccountService The service responsible for game account operations.
+     */
+
+<span class="fc" id="L26">    public GameAccountController(GameAccountService gameAccountService) {</span>
+<span class="fc" id="L27">        this.gameAccountService = gameAccountService;</span>
+<span class="fc" id="L28">    }</span>
+
+    /**
+     * Handles HTTP POST requests to &quot;/api/accounts/event&quot; for triggering a game event.
+     *
+     * @param event The game event data sent in the request body.
+     * @return ResponseEntity containing the remaining balance after processing the event.
+     */
+
+    @PostMapping(&quot;/event&quot;)
+    public ResponseEntity&lt;Double&gt; triggerEvent(@RequestBody GameEvent event) {
+        // Trigger the event and get the remaining balance from the GameAccountService.
+<span class="nc" id="L40">        Double remainingBalance = gameAccountService.triggerEvent(event);</span>
+        // Respond with the remaining balance in the HTTP response body.
+<span class="nc" id="L42">        return ResponseEntity.ok(remainingBalance);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

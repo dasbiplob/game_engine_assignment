@@ -10,7 +10,6 @@
 	</parent>
 	<groupId>fi.handson</groupId>
 	<artifactId>game_engine</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<name>engine</name>
 	<description>Game Engine</description>
@@ -88,7 +87,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.0</version>
+				<version>0.8.7</version>
 				<executions>
 					<execution>
 						<id>default-prepare-agent</id>
@@ -109,7 +108,6 @@
 						<goals>
 							<goal>report</goal>
 						</goals>
-
 					</execution>
 					<execution>
 						<id>jacoco-check</id>
@@ -117,7 +115,11 @@
 						<goals>
 							<goal>check</goal>
 						</goals>
-
+						<configuration>
+							<rules>
+								<!-- Define your rules here if needed -->
+							</rules>
+						</configuration>
 					</execution>
 				</executions>
 

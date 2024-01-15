@@ -1,0 +1,6 @@
+services:
+  game-engine:
+    build: game-engine
+    container_name: game-engine
+    ports:
+      - "8080:8080"
