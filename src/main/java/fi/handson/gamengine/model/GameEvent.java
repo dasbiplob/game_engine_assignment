@@ -23,4 +23,12 @@ public class GameEvent implements Serializable {
     private String event_type;
     @Column(name="amount")
     private Double amount;
+
+    public GameEvent(String player_id, String event_type, Double amount, String event_id) {
+        this.player_id = player_id;
+        this.event_type = event_type;
+        this.amount = amount;
+        this.event_id = event_id;
+        this.time_stamp = new Date();
+    }
 }
