@@ -6,7 +6,20 @@ This project aims to develop a simple game account (wallet service) that integra
 The game account operates as a server, providing an HTTP API for game engines and managing customer account balances. 
 This document outlines the design, implementation, and testing of the system.
 
-## HTTP API Design
+### Prerequisites
+
+Make sure you have the following installed on your system:
+
+- Java Development Kit (JDK)
+- Maven
+
+### Steps
+
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/dasbiplob/game_engine_assignment.git
+   cd game_engine_assignment
+
 
 ### Charging a Game
 
@@ -57,4 +70,8 @@ This document outlines the design, implementation, and testing of the system.
 - Access the URL: http://localhost:8083/swagger-ui/index.html
 - Execute the API calls with the provided payloads.
 
-
+## Running Test Cases
+- To run the test cases for this system, follow these steps:
+- In the IDE, locate the test class (GameAccountServiceTest) and right-click on it.
+ # In IntelliJ, you can run the tests by clicking the green arrow next to the test class or method.
+ 
